@@ -4,7 +4,7 @@ import ExplainCard from "./components/ExplainCard";
 import QuizCard from "./components/QuizCard";
 import SummarizeCard from "./components/SummarizeCard";
 
-export default function App() {
+export default function App({backendurl}) {
   const [message, setMessage] = useState("");
   const [reply, setReply] = useState("");
   const [loading, setLoading] = useState(false);
@@ -17,7 +17,7 @@ export default function App() {
     setReply("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/openai", {
+      const res = await axios.post(`${backendurl}/chat`, {
         message,
       });
       setReply(res.data.reply);
