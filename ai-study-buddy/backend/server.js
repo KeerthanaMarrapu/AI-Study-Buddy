@@ -8,8 +8,8 @@ app.use(cors({
   origin: "https://https://ai-study-buddy-dun.vercel.app/"
 })
 );
-app.use(express.json({ limit: "2mb" }));
 app.use("/api/openai", openaiRouter);
+app.use(express.json({ limit: "2mb" }));
 app.get("/", (req, res) => res.send({ status: "OK" }));
 app.use((err, req, res, next) => {
   console.error("Unhandled error:", err);
