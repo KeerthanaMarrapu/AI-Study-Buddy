@@ -5,7 +5,7 @@ const openaiRouter = require("./routes/openai");
 const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(cors({
-  origin: "https://your-frontend-url.vercel.app"
+  origin: "https://https://ai-study-buddy-dun.vercel.app/"
 })
 );
 app.use(express.json({ limit: "2mb" }));
