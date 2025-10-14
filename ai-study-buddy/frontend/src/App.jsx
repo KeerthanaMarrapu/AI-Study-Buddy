@@ -17,7 +17,7 @@ export default function App({backendurl}) {
     setReply("");
 
     try {
-      const res = await axios.post(`${backendurl}/chat`, {
+      const res = await axios.post(`${backendurl}/api/openai`, {
         message,
       });
       setReply(res.data.reply);
